@@ -164,20 +164,20 @@ class Welcome extends CI_Controller {
 		$this->formM->update_data($id,$fname,$lname,$gender, $dob, $phone,$occupation,$qualification,$laddress, $paddress,$pincode);
 		header('Location:http://localhost/ci/index.php/Welcome/fatch_form/');
      }
-	//  public function fedit()
-    // {
-    //   $this->load->model('formM');
-    //  $rs['data']=$this->formM->fRecords($id);
-    //   $this->load->view('forgot',$rs);
-    // }
-	// public function forgot($id)
-	// {
-	// 	$fname=$_POST['fname'];
-	// 	$username=$_POST['username'];
-	// 	$password=$_POST['password'];
-	// 	$this->load->model('formM');
-	// 	$this->formM->forgot_data($id,$fname,$username,$password);
-	// 	}
+	 public function fedit()
+    {
+      $this->load->model('formM');
+     $rs['data']=$this->formM->fRecords($id);
+      $this->load->view('forgot',$rs);
+    }
+	public function forgot($id)
+	{
+		$fname=$_POST['fname'];
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		$this->load->model('formM');
+		$this->formM->forgot_data($id,$fname,$username,$password);
+		}
 }
 
 
